@@ -9,7 +9,7 @@ import (
 	"yqnft/NFTManage/models/model"
 	apiResult "yqnft/NFTManage/models/request_result/api"
 	"yqnft/NFTManage/utils"
-	SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
+	//SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
 )
 
 type NftCollectionService struct {
@@ -120,7 +120,7 @@ func (nftCollectionService NftCollectionService) UpdateCreateCollection(ch chan<
 	utils.StructAssign(&nftCollection, &nftCollectionVO)
 	nftCollection.UpdateTime = time.Now()
 	go models.DB.Updates(&nftCollection)
-	SendMQMessage.ChangeNftCollectionByIdMessage(nftCollectionVO.ID)
+	//SendMQMessage.ChangeNftCollectionByIdMessage(nftCollectionVO.ID)
 	ch <- nftCollection
 }
 

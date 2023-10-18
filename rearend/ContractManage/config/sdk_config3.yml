@@ -4,23 +4,23 @@ chain_client:
   # 组织ID
   org_id: "TestCMorg3"
   # 客户端用户私钥路径
-  user_key_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.key"
+  user_key_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.key"
   # 客户端用户私钥密码(无密码则不需要设置)
 #  user_key_pwd: "123"
   # 客户端用户证书路径
-  user_crt_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.crt"
+  user_crt_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.crt"
   # 客户端用户加密私钥路径(tls加密证书对应私钥，应用于国密GMTLS双证书体系；若未设置仅使用单证书）
-  user_enc_key_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.enc.key"
+  user_enc_key_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.enc.key"
   # 客户端用户加密私钥密码(无密码则不需要设置)
 #  user_enc_key_pwd: "123"
   # 客户端用户加密证书路径(tls加密证书，应用于国密GMTLS双证书体系；若未设置仅使用单证书）
-  user_enc_crt_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.enc.crt"
+  user_enc_crt_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.tls.enc.crt"
   # 客户端用户交易签名私钥路径(若未设置，将使用user_key_file_path)
-  user_sign_key_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.sign.key"
+  user_sign_key_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.sign.key"
   # 客户端用户交易签名私钥密码(无密码则不需要设置)
 #  user_sign_key_pwd: "123"
   # 客户端用户交易签名证书路径(若未设置，将使用user_crt_file_path)
-  user_sign_crt_file_path: "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.sign.crt"
+  user_sign_crt_file_path: "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/admin/cmtestuser3.sign.crt"
   # 同步交易结果模式下，轮询获取交易结果时的最大轮询次数，删除此项或设为<=0则使用默认值 10
   retry_limit: 20
   # 同步交易结果模式下，每次轮询交易结果时的等待时间，单位：ms 删除此项或设为<=0则使用默认值 500
@@ -40,7 +40,7 @@ chain_client:
       enable_tls: true
       # 信任证书池路径
       trust_root_paths:
-        - "F:/MyGopath/src/yqnft/ContractManage/config/crypto-config/TestCMorg3/ca"
+        - "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/crypto-config/TestCMorg3/ca"
       # TLS hostname
       tls_host_name: "chainmaker.org"
   archive:

@@ -8,7 +8,7 @@ import (
 	"yqnft/NFTManage/models/model"
 	apiResult "yqnft/NFTManage/models/request_result/api"
 	"yqnft/NFTManage/utils"
-	SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
+	//SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
 )
 
 type NftOrderService struct {
@@ -167,6 +167,6 @@ func (nftOrderService NftOrderService) UpdatePayWorksInAfter(order model.NftOrde
 	nftWork.UpdateTime = time.Now()
 	nftWork.State = 1
 	go models.DB.Save(&nftWork)
-	SendMQMessage.ChangeNftWorkByIdMessage(order.AssetsID)
+	//SendMQMessage.ChangeNftWorkByIdMessage(order.AssetsID)
 	return true
 }

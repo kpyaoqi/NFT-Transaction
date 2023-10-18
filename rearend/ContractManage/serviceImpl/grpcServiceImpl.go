@@ -17,9 +17,9 @@ import (
 const (
 	createContractTimeout    = 5
 	withSyncResult           = true
-	sdkConfigOrg1Client1Path = "F:/MyGopath/src/yqnft/ContractManage/config/sdk_config1.yml"
-	nftByteCodePath          = "F:/MyGopath/src/yqnft/Contractmanage/contract_file/nft/nftmanger.bin"
-	nftABIPath               = "F:/MyGopath/src/yqnft/Contractmanage/contract_file/nft/nftmanger.abi"
+	sdkConfigOrg1Client1Path = "D:/OpenNFT/NFT交易平台/rearend/ContractManage/config/sdk_config1.yml"
+	nftByteCodePath          = "D:/OpenNFT/NFT交易平台/rearend/ContractManage/contract_file/nft/nftmanger.bin"
+	nftABIPath               = "D:/OpenNFT/NFT交易平台/rearend/ContractManage/contract_file/nft/nftmanger.abi"
 )
 
 var client, _ = examples.CreateChainClientWithSDKConf(sdkConfigOrg1Client1Path)

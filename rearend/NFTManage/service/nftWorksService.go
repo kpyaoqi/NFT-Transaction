@@ -10,7 +10,7 @@ import (
 	"yqnft/NFTManage/models/model"
 	apiResult "yqnft/NFTManage/models/request_result/api"
 	"yqnft/NFTManage/utils"
-	SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
+	//SendMQMessage "yqnft/YQRabbitMQ/SimplePublish"
 )
 
 type NftWorksService struct {
@@ -65,7 +65,7 @@ func (nftWorksService NftWorksService) FindAuthorIdByWorksId(id string) string {
 func (nftWorksService NftWorksService) UpdateDefaultValueNftWorks(nftWork model.NftWork) bool {
 	models.DB.Model(&nftWork).UpdateColumn("updateTime", time.Now())
 	//清楚缓存
-	SendMQMessage.ChangeNftWorkByIdMessage(nftWork.ID)
+	//SendMQMessage.ChangeNftWorkByIdMessage(nftWork.ID)
 	return true
 }
 
@@ -106,7 +106,7 @@ func (nftWorksService NftWorksService) saveDefaultValueNftWorks(nftWork model.Nf
 	nftWork.State = 0
 	models.DB.Save(&nftWork)
 	//清楚缓存
-	SendMQMessage.ChangeNftWorkByIdMessage(nftWork.ID)
+	//SendMQMessage.ChangeNftWorkByIdMessage(nftWork.ID)
 	return true
 }
 
@@ -124,7 +124,7 @@ func (nftWorksService NftWorksService) UpdateLogicDel(worksId string) bool {
 		Update("state", 4).
 		Update("update_time", time.Now())
 	//清楚缓存
-	SendMQMessage.ChangeNftWorkByIdMessage(worksId)
+	//SendMQMessage.ChangeNftWorkByIdMessage(worksId)
 	return true
 }
 
@@ -266,7 +266,7 @@ func (nftWorksService NftWorksService) BuyNftWork(worksId string) string {
 	works.Buyers = works.Buyers + "," + userId
 	models.DB.Save(&works)
 	//清除缓存
-	SendMQMessage.ChangeNftWorkByIdMessage(worksId)
+	//SendMQMessage.ChangeNftWorkByIdMessage(worksId)
 	//NFT转移主人
 	var nftUserAsset model.NftUserAsset
 	models.DB.Where("assetsId=? AND userId=?", worksId, collection.UserID).First(&nftUserAsset)

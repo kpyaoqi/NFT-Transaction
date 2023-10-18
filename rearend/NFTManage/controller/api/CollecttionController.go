@@ -87,8 +87,8 @@ func (con NFTController) Create(c *gin.Context) {
 func (con NFTController) LabelValuePair(c *gin.Context) {
 	userId := config.SessionGet("userId").(string)
 	ch := make(chan []apiResult.LabelValuePairVO)
-	labelValuePairVOs := <-ch
 	go nftCollectionService.GetLabelValuePair(ch, userId)
+	labelValuePairVOs := <-ch
 	close(ch)
 	c.JSON(http.StatusOK, gin.H{"status": "success", "result": labelValuePairVOs, "page": nil, "message": "操作成功", "statusCode": 200})
 }
